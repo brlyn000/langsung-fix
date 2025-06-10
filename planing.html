@@ -1,228 +1,121 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LangsungFix - Konsultasi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LangsungFix - Planning, Training and Supervision</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background: #fff;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #eee;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #00c975;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #333;
-    }
-    .contact-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 4rem 2rem;
-    }
-    .contact-text {
-      flex: 1 1 40%;
-      padding-right: 2rem;
-    }
-    .contact-text h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-    .feature {
-      display: flex;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-    .feature-icon {
-      width: 50px;
-      height: 50px;
-      background: #e0f7f0;
-      border-radius: 50%;
-      margin-right: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-    .feature h4 {
-      margin-bottom: 0.3rem;
-      font-size: 1rem;
-    }
-    .contact-form {
-      flex: 1 1 55%;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      background: #f9f9f9;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    .contact-form input,
-    .contact-form textarea {
-      flex: 1 1 48%;
-      padding: 0.75rem 1rem;
-      border: none;
-      border-radius: 10px;
-      background: #fff;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-    }
-    .contact-form textarea {
-      flex: 1 1 100%;
-      resize: none;
-      min-height: 100px;
-    }
-    .contact-form button {
-      flex: 1 1 100%;
-      padding: 0.75rem;
-      background: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    footer {
-      background: #003366;
-      color: #fff;
-      padding: 3rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .footer-column {
-      flex: 1 1 200px;
-      margin-bottom: 1rem;
-    }
-    .footer-column h4 {
-      margin-bottom: 1rem;
-      color: #00c975;
-    }
-    .footer-column ul {
-      list-style: none;
-    }
-    .footer-column ul li {
-      margin-bottom: 0.5rem;
-    }
-    .footer-cta {
-      flex: 1 1 100%;
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .footer-cta p {
-      margin-bottom: 0.5rem;
-    }
-    .footer-cta a {
-      background: #00c975;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #fff; color: #333; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid #eee; }
+    .logo { font-size: 24px; font-weight: bold; color: #00c975; }
+    nav a { margin-left: 20px; text-decoration: none; color: #333; }
+
+    .hero { background: linear-gradient(to bottom, #dbe9ff, #fff); padding: 60px 20px; text-align: center; }
+    .hero h1 { font-size: 36px; font-weight: bold; }
+
+    .section-about { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 40px 20px; gap: 20px; }
+    .section-about img { max-width: 400px; }
+    .section-about .text { max-width: 500px; }
+    .section-about .text h2 { color: #007bff; margin-bottom: 10px; }
+    .section-about .text p { color: #444; line-height: 1.6; }
+
+    .layanan { text-align: center; padding: 50px 20px; }
+    .layanan h2 { font-size: 28px; margin-bottom: 30px; color: #00c975; }
+    .grid-layanan { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: auto; }
+    .card { background: #e7f1ff; padding: 20px; border-radius: 12px; text-align: left; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    .card h3 { color: #007bff; margin-bottom: 10px; }
+    .card p { font-size: 14px; color: #333; }
+
+    .benefits { text-align: center; padding: 40px 20px; }
+    .benefits h3 { color: #00c975; font-size: 22px; margin-bottom: 20px; }
+    .benefits ul { list-style: none; padding: 0; }
+    .benefits li { background: #007bff; color: #fff; margin: 10px auto; padding: 10px 15px; border-radius: 8px; max-width: 400px; }
+
+    .contact { background: #f3f8ff; padding: 50px 20px; text-align: center; }
+    .contact h2 { color: #00c975; margin-bottom: 10px; }
+    .contact p { margin-bottom: 20px; color: #555; }
+    .form { max-width: 600px; margin: auto; display: grid; gap: 15px; grid-template-columns: 1fr 1fr; }
+    .form input, .form textarea { padding: 10px 15px; border-radius: 10px; border: none; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .form textarea { grid-column: 1 / span 2; min-height: 100px; }
+    .form button { grid-column: 1 / span 2; padding: 12px; background: #007bff; color: #fff; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; }
+
+    footer { background: #003366; color: #fff; padding: 40px 20px; text-align: center; font-size: 14px; }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo">LangsungFix</div>
     <nav>
       <a href="index.html">Beranda</a>
       <a href="index.html">Layanan</a>
-      <a href="index.html">Tentang Kami</a>
-      <a href="contact.html" class="btn">Kontak Kami</a>
+      <a href="about.html">Tentang Kami</a>
+      <a href="portfolio.html">Portofolio</a>
+      <a href="contact.html">Kontak</a>
     </nav>
   </header>
 
-  <section class="contact-section">
-    <div class="contact-text">
-      <h2>Diskusikan Kebutuhan Anda<br>dengan <span style="color:#00c975;">LangsungFix!</span></h2>
-      <div class="feature">
-        <div class="feature-icon">⚡</div>
-        <div>
-          <h4>Respon Cepat</h4>
-          <p>LangsungFix mengutamakan membantu anda secepat mungkin</p>
-        </div>
+  <section class="hero">
+    <h1>Planning, Training and Supervision</h1>
+  </section>
+
+  <section class="section-about">
+    <img src="https://via.placeholder.com/400x250" alt="Ilustrasi Planning">
+    <div class="text">
+      <h2>Tentang Planning, Training and Supervision</h2>
+      <p>Layanan ini dirancang untuk membantu perusahaan dalam proses transformasi digital, mulai dari tahap perencanaan hingga supervisi pelaksanaan teknologi.</p>
+    </div>
+  </section>
+
+  <section class="layanan">
+    <h2>Layanan yang Termasuk</h2>
+    <div class="grid-layanan">
+      <div class="card">
+        <h3>ICT Master Plan</h3>
+        <p>Penyusunan roadmap teknologi informasi jangka panjang sesuai visi dan misi perusahaan.</p>
       </div>
-      <div class="feature">
-        <div class="feature-icon">💬</div>
-        <div>
-          <h4>Komunikatif</h4>
-          <p>Tim kami mampu memahami dan memenuhi berbagai spesifikasi kebutuhan yang anda inginkan</p>
-        </div>
+      <div class="card">
+        <h3>ICT Infrastructure</h3>
+        <p>Desain solusi infrastruktur teknologi yang optimal, efisien, dan scalable.</p>
       </div>
-      <div class="feature">
-        <div class="feature-icon">🌐</div>
-        <div>
-          <h4>Aksesibilitas</h4>
-          <p>Anda bebas memilih penempatan kerja di berbagai lokasi, baik secara on-site, hybrid, maupun remote</p>
-        </div>
+      <div class="card">
+        <h3>ICT Training Service</h3>
+        <p>Pelatihan karyawan agar mampu mengoperasikan sistem dan teknologi yang digunakan.</p>
+      </div>
+      <div class="card">
+        <h3>ERP Extended App</h3>
+        <p>Pengembangan aplikasi tambahan untuk memperluas fungsionalitas sistem ERP.</p>
       </div>
     </div>
-    <form class="contact-form">
-      <input type="text" placeholder="Nama Depan">
-      <input type="text" placeholder="Nama Belakang">
-      <input type="email" placeholder="Alamat Email">
-      <input type="text" placeholder="Nama Perusahaan">
-      <textarea placeholder="Pesan"></textarea>
+  </section>
+
+  <section class="benefits">
+    <h3>LangsungFix Planning, Training and Supervision</h3>
+    <ul>
+      <li>Transformasi teknologi yang terarah</li>
+      <li>Efisiensi biaya dan waktu implementasi</li>
+      <li>Kesiapan SDM dalam mengadopsi teknologi</li>
+      <li>Sistem kerja lebih terintegrasi dan terdigitalisasi</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Hubungi Kami</h2>
+    <p>Diskusikan tantangan IT Anda dan tim ahli kami akan membantu memberikan solusi yang tepat.</p>
+    <form class="form">
+      <input type="text" placeholder="Nama Depan" />
+      <input type="text" placeholder="Nama Belakang" />
+      <input type="email" placeholder="Alamat Email" />
+      <input type="text" placeholder="Nama Perusahaan" />
+      <textarea placeholder="Pesan Anda..."></textarea>
       <button type="submit">Kirim Pesan</button>
     </form>
   </section>
 
   <footer>
-    <div class="footer-column">
-      <h4>LangsungFix</h4>
-      <ul>
-        <li>Solusi Teknologi</li>
-        <li>Web & Aplikasi</li>
-        <li>IT Infrastructure</li>
-        <li>Analytics & Training</li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Solusi</h4>
-      <ul>
-        <li>Planning, Training and Supervision</li>
-        <li>Application Development</li>
-        <li>Hardware & Software</li>
-        <li>Business Analytic</li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Halaman</h4>
-      <ul>
-        <li>Tentang Kami</li>
-        <li>Kontak Kami</li>
-        <li>Portofolio</li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Coba Sekarang</h4>
-      <p>Coba layanan kami, kami akan menjaga privasi anda 100% aman</p>
-      <a href="#">Mulai sekarang</a>
-    </div>
-    <div class="footer-cta">
-      <p>&copy;2025 LangsungFix LLC.</p>
-    </div>
+    <p>&copy; 2025 LangsungFix LLC — Semua hak dilindungi.</p>
   </footer>
+
 </body>
 </html>
