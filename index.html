@@ -23,6 +23,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .logo {
       font-size: 1.8rem;
@@ -36,13 +39,18 @@
       font-weight: 500;
     }
     .hero {
-      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      background: #f0f8ff;
+      padding: 4rem 2rem;
+      background: linear-gradient(90deg, #e0fff3, #ffffff);
     }
     .hero h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      max-width: 600px;
     }
     .hero p {
       font-size: 1.1rem;
@@ -60,35 +68,50 @@
       font-weight: 600;
       margin-top: 1rem;
     }
-    section {
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .section-desc {
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      color: #555;
-    }
-    .layanan-container {
+    .grid-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background-color: #f9f9f9;
     }
-    .layanan-card {
-      border: 1px solid #eee;
+    .grid-section h2 {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
       border-radius: 10px;
-      padding: 1.5rem;
-      text-align: left;
-      background: #fafafa;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    .layanan-card h3 {
-      color: #00c975;
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
       margin-bottom: 0.5rem;
+      color: #00c975;
+    }
+    .card p {
+      color: #444;
+      font-size: 0.95rem;
+    }
+    .cta-section {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: #e6fff4;
+    }
+    .cta-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      margin-bottom: 1.5rem;
+      color: #333;
     }
     footer {
       background: #f8f9fa;
@@ -111,40 +134,39 @@
   </header>
 
   <section class="hero">
-    <h1>Tingkatkan teknologi Anda, kembangkan bisnis Anda.</h1>
-    <p>Lafix adalah konsultan TI profesional yang siap membantu Anda membangun situs web, mengembangkan aplikasi, dan solusi teknologi lainnya. Cepat, tepat, dan andal – wujudkan ide Anda bersama kami!</p>
-    <a href="#kontak" class="btn">Kontak Kami</a>
+    <h1>Tingkatkan teknologi Anda, kembangkan bisnis Anda</h1>
+    <p>Layanan konsultasi TI dari LangsungFix akan membantu Anda dalam membangun sistem, aplikasi, dan infrastruktur digital yang modern dan terpercaya.</p>
+    <a href="#layanan" class="btn">Lihat Layanan</a>
   </section>
 
-  <section id="layanan">
-    <h2 class="section-title">Layanan LangsungFix</h2>
-    <p class="section-desc">Dari kerusakan perangkat sampai pengembangan sistem skala besar, kami siap bantu. Berikut layanan yang bisa kamu andalkan:</p>
-    <div class="layanan-container">
-      <div class="layanan-card">
-        <h3>Planning, Training & Supervision</h3>
-        <p>Mendukung transformasi bisnis dengan ICT Master Plan, ERP Planning & Implementation, dan pelatihan staf.</p>
-      </div>
-      <div class="layanan-card">
-        <h3>Application Development</h3>
-        <p>Pembuatan aplikasi Web/Desktop dan Mobile yang disesuaikan dengan alur bisnis dan kebutuhan klien.</p>
-      </div>
-      <div class="layanan-card">
-        <h3>Hardware & Software</h3>
-        <p>Solusi terintegrasi untuk infrastruktur IT, perangkat kerja, lisensi software, dan teknologi IoT industri.</p>
-      </div>
-      <div class="layanan-card">
-        <h3>Business Analytic</h3>
-        <p>Analisis dan visualisasi data untuk pengambilan keputusan strategis menggunakan tools seperti Power BI, Tableau, dan lainnya.</p>
-      </div>
+  <section class="grid-section" id="layanan">
+    <h2>Layanan LangsungFix</h2>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="Planning">
+      <h3>Planning, Training & Supervision</h3>
+      <p>Dukungan lengkap untuk transformasi digital, mulai dari ICT Master Plan hingga pelatihan staf.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="Development">
+      <h3>Application Development</h3>
+      <p>Pengembangan aplikasi web, desktop, dan mobile yang disesuaikan dengan kebutuhan operasional bisnis Anda.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="Hardware">
+      <h3>Hardware & Software</h3>
+      <p>Solusi infrastruktur IT lengkap, termasuk jaringan, perangkat kerja, dan lisensi software resmi.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="Analytics">
+      <h3>Business Analytic</h3>
+      <p>Solusi data untuk pengambilan keputusan strategis berbasis analisis dan visualisasi informasi.</p>
     </div>
   </section>
 
-  <section id="tentang">
-    <h2 class="section-title">Mengapa Memilih LangsungFix?</h2>
-    <div class="section-desc">
-      <p>Kami bukan hanya teknisi, tapi mitra strategis digital Anda. Konsultan TI kami bantu arahkan teknologi sesuai kebutuhan bisnis Anda. Dengan pendekatan sistematis, efisien, dan profesional, kami siap bantu Anda naik kelas secara digital.</p>
-    </div>
-    <a href="#" class="btn">Pelajari Lebih Lanjut</a>
+  <section class="cta-section">
+    <h2>Siap Digitalisasi Bisnis Anda?</h2>
+    <p>Kami bantu dari awal hingga siap digunakan — sistem, aplikasi, hingga pelatihan penggunaan.</p>
+    <a href="#kontak" class="btn">Hubungi Kami</a>
   </section>
 
   <footer>
